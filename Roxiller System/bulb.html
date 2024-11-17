@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .bulb-container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .bulb {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.5s;
+    }
+    
+    .bulb.on {
+        background-color: #ffff00;
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    }
+    
+    .controls {
+        margin-top: 20px;
+    }
+    
+    #brightness-slider {
+        width: 50%;
+        height: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #brightness-level {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="bulb-container">
+        <div class="bulb" id="bulb"></div>
+        <div class="controls">
+            <button id="on-off-btn">On/Off</button>
+            <input type="range" id="brightness-slider" min="0" max="100" value="50">
+            <span id="brightness-level">50%</span>
+        </div>
+    </div>
+    <Script>
+        let bulb = document.getElementById('bulb');
+        let onOffBtn = document.getElementById('on-off-btn');
+        let brightnessSlider = document.getElementById('brightness-slider');
+        let brightnessLevel = document.getElementById('brightness-level');
+        
+        let isOn = false;
+        let brightness = 50;
+        
+        onOffBtn.addEventListener('click', () => {
+            isOn = !isOn;
+            if (isOn) {
+                bulb.classList.add('on');
+                onOffBtn.textContent = 'Off';
+            } else {
+                bulb.classList.remove('on');
+                onOffBtn.textContent = 'On';
+            }
+        });
+        
+        brightnessSlider.addEventListener('input', (e) => {
+            brightness = e.target.value;
+            brightnessLevel.textContent = `${brightness}%`;
+            if (isOn) {
+                bulb.style.boxShadow = `0 0 ${brightness}px rgba(255, 255, 0, 0.5)`;
+            }
+        });</Script>
+</body>
+</html>

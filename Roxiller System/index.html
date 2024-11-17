@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./Style.css" rel="Stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <span>Home appliance Controller</span> 
+            <Button onclick="increment(), FanOn()" id="on-off-btn" class="btn on fanBtn active"  data-nav="0" onclick=""> ON </Button> 
+            <Button onclick="decrement(), FanOn()" class="btn off fanBtn" data-nav="1">OFF</Button>
+        </div>
+        <p>Dubble click on the On button to on all Home appliance</p>
+        <div class=" box box1">
+            <div class="box_AC">
+                <div class="ac"><img height="80px" width="200px" src="./images/ac.jpg" alt=""></div>
+                <p id="h1"></p><sup id="degree">c</sup>
+                <div class="buttons">
+                    <button  onclick="increment()">+</button>
+                    <button onclick="decrement()">-</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="box box2">
+            <div class="box_Fan">
+                <img src="./images/fanHead.jpg" class="fanImg" height="100px" width="100px" alt="">
+                <Button class="fanBtn fanBtn1 " data-nav="2">1</Button>
+                <Button class="fanBtn fanBtn2" data-nav="3">2</Button>
+                <Button class="fanBtn fanBtn3" data-nav="4">3</Button>
+            </div>
+        </div>
+        <div class="box box3 ">
+            <div class="box_Bulb .bulb-container" >
+                <div class="bulb" id="bulb"></div>
+                <div class="controls">
+                    <!-- <button class="fanBtn" data-nav="5" >On/Off</button> -->
+                    <input  type="range" id="brightness-slider" min="0" max="100" value="50">
+                    <span id="brightness-level">50%</span>
+                </div>
+            </div>
+        </div>
+        <div class="box box4">
+            <div class="box_Tv">
+                <img src="./images/tv1.jpg" height="100" width="150">
+                <iframe  data-nav="5"  class="tv fanBtn active" width="140" height="90" controls src="https://www.youtube.com/embed/LAdp3ZHeP4Q?si=8pqgrlSTotwnTsM_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Script.js">5</script>
+</body>
+</html>
